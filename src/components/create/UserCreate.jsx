@@ -1,6 +1,6 @@
 import * as React  from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
+
 import Container from "@mui/material/Container";
 import { Typography , Grid, Button  } from "@mui/material";
 import TextField from "@mui/material/TextField";
@@ -101,8 +101,13 @@ export default function UserCreate() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <Button type="submit" variant="contained" fullWidth>
-                  Creat
+                <Button
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                  style={{ background: "#2E3B55" }}
+                >
+                  Create
                 </Button>
               </Grid>
             </Grid>

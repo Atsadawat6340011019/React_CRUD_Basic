@@ -1,6 +1,6 @@
 import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
+
 import Container from "@mui/material/Container";
 import { Typography, Grid, Button } from "@mui/material";
 import TextField from "@mui/material/TextField";
@@ -53,7 +53,7 @@ useEffect(() => {
       redirect: "follow",
     };
 
-    fetch("https://www.melivecode.com/api/users/update", requestOptions)
+    fetch("https://www.melivecode.com/api/users/update/" +id, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         alert(result["message"]);
@@ -72,7 +72,7 @@ useEffect(() => {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg" sx={{ p: 2 }}>
-        <Typography variant="h6" gutterBottom component="div" sx={{ p: 1}}>
+        <Typography variant="h6" gutterBottom component="div" sx={{ p: 1 }}>
           <h1 sx={{ p: 3 }}>Update User</h1>
           <form onSubmit={handleSubmit}>
             <Grid container spacing={2}>
@@ -132,7 +132,12 @@ useEffect(() => {
                 />
               </Grid>
               <Grid item xs={12}>
-                <Button type="submit" variant="contained" fullWidth>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                  style={{ background: "#2E3B55" }}
+                >
                   Update
                 </Button>
               </Grid>

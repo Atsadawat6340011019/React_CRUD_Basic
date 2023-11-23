@@ -14,7 +14,7 @@ import TableRow from "@mui/material/TableRow";
 import Avatar from "@mui/material/Avatar";
 import Link from "@mui/material/Link";
 import { ButtonGroup } from "@mui/material";
-import UserUpdate from "../edit/UserUpdate";
+
 
 
 export default function Users() {
@@ -39,7 +39,7 @@ export default function Users() {
   }
 
   const UserUpdate1 = id => {
-    window.location = '/update'+id
+    window.location = '/update/'+id
   }
   const UserDelete = id => {
     var myHeaders = new Headers();
@@ -79,7 +79,9 @@ export default function Users() {
             </Box>
             <Box>
               <Link href="/create">
-                <Button variant="contained">Creat</Button>
+                <Button variant="contained" style={{ background: "#2E3B55" }}>
+                  Creat
+                </Button>
               </Link>
             </Box>
           </Box>
@@ -118,9 +120,18 @@ export default function Users() {
                         variant="outlined"
                         aria-label="outlined button group"
                       >
-                        <Button onClick={() => UserUpdate1(row.id)}>Edit</Button>
-                        <Button onClick={() => UserDelete(row.id)}>Delete</Button>
-                      
+                        <Button
+                          onClick={() => UserUpdate1(row.id)}
+                          style={{ background: "#a5d6a7", fontWeight: "bold" }}
+                        >
+                          Edit
+                        </Button>
+                        <Button
+                          onClick={() => UserDelete(row.id)}
+                          style={{ background: "#f8bbd0", fontWeight: "bold" }}
+                        >
+                          Delete
+                        </Button>
                       </ButtonGroup>
                     </TableCell>
                   </TableRow>
